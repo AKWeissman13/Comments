@@ -101,7 +101,7 @@
             </div>
             <div class="post__icons">
               <div class="post__icon">
-                <img src="/imgs/3.svg" alt="comment" />
+                <img src="imgs/3.svg" alt="comment" />
                 <p>3</p>
               </div>
             </div>
@@ -109,7 +109,6 @@
               <div class="post__old-comment">
                 <div class="user__img-block">
                   <div class="user__img"></div>
-                  
                 </div>
                 <div class="post__old-comment-content">
                   <a href="#" class="user__name"> Weissman </a>
@@ -117,8 +116,18 @@
                   <p class="user__date">2 Марта в 15:30</p>
                 </div>
                 <div class="post__action-icons">
-                  <img src="imgs/bin.svg" alt="" class="delete" onclick="del(this)">
-                  <img src="imgs/unlike.svg" alt="" class="like" onclick="like(this)">
+                  <img
+                    src="imgs/bin.svg"
+                    alt=""
+                    class="delete"
+                    onclick="del(this)"
+                  />
+                  <img
+                    src="imgs/unlike.svg"
+                    alt=""
+                    class="like"
+                    onclick="like(this)"
+                  />
                 </div>
               </div>
               <div class="post__add-comment-container acc">
@@ -127,16 +136,29 @@
                 </div>
                 <div class="acc__riht">
                   <form action="#" name="newComment">
-                    <input type="text" name="userName" data-invalid placeholder="Введите ваше имя..." />
+                    <input
+                      type="text"
+                      name="userName"
+                      data-invalid
+                      placeholder="Введите ваше имя..."
+                    />
                     <div class="acc__date">
                       <div class="acc__date-choice">
                         <label for="date"> Желателе установить дату? </label>
-                        <input type="checkbox" name="dateChoice" id="dateChoice" />
+                        <input
+                          type="checkbox"
+                          name="dateChoice"
+                          id="dateChoice"
+                        />
                       </div>
                       <input type="date" name="date" id="date" />
                     </div>
                     <div class="acc__submit">
-                      <textarea type="text" name="comment" placeholder="Напишите Коментарий..."></textarea>
+                      <textarea
+                        type="text"
+                        name="comment"
+                        placeholder="Напишите Коментарий..."
+                      ></textarea>
                       <button name="submit" type="button">
                         <img src="imgs/paper-plane-svgrepo-com.svg" alt="" />
                       </button>
@@ -149,6 +171,5 @@
         </div>
       </div>
     </main>
-
   </body>
 </html>
