@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__left">
+          <div class="header__logo-img logo-img">
+            <img src="imgs/VK_logo.png" alt="Logo" class="logo-img__img" />
+          </div>
+          <div class="header__logo-title logo-title">Вконтакте</div>
+          <div class="header__search search">
+            <input type="text" class="search__field" placeholder="Поиск" />
+          </div>
+          <div class="header__notification notification">
+            <img
+              src="imgs/bell-svgrepo-com.svg"
+              alt="notification"
+              class="notification__img"
+            />
+          </div>
+        </div>
+        <div class="header__right">
+          <div class="header__menu">
+            <img src="imgs/dots-9-svgrepo-com.svg" alt="menu" />
+          </div>
+          <div class="header__profile">
+            <div class="user__img"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main__inner">
+        <div class="main__left">
+          <ul class="main__nav">
+            <a href="#" class="main__nav-links">
+              <li class="main__nav-items">Моя Страница</li>
+            </a>
+            <a href="#" class="main__nav-links">
+              <li class="main__nav-items">Новости</li>
+            </a>
+            <a href="#" class="main__nav-links">
+              <li class="main__nav-items">Мессенджер</li>
+            </a>
+            <a href="#" class="main__nav-links">
+              <li class="main__nav-items">Звонки</li>
+            </a>
+            <a href="#" class="main__nav-links">
+              <li class="main__nav-items">Друзья</li>
+            </a>
+            <a href="#" class="main__nav-links">
+              <li class="main__nav-items">Сообщества</li>
+            </a>
+            <a href="#" class="main__nav-links">
+              <li class="main__nav-items">Фотографии</li>
+            </a>
+            <a href="#" class="main__nav-links">
+              <li class="main__nav-items">Музыка</li>
+            </a>
+            <a href="#" class="main__nav-links">
+              <li class="main__nav-items">Видео</li>
+            </a>
+          </ul>
+        </div>
+        <div class="main__center">
+          <div class="post main__post">
+            <div class="user post__user">
+              <div class="user__img-block">
+                <div class="user__img"></div>
+              </div>
+              <div class="user__post-info">
+                <a href="#" class="user__name"> Weissman </a>
+                <p class="user__date">2 Марта в 15:30</p>
+              </div>
+            </div>
+            <div class="post__content">
+              <div class="post__content-text">
+                Птенцы Гульдовой Амадины, в уголках коротких клювиков которых
+                расположены по две лазурно-голубые папиллы, которые в темном
+                гнезде светятся, отражая самые незначительные отблески света.
+                Это помогает кормить их в тёмное время суток.
+              </div>
+              <div class="post__content-additive">
+                <img
+                  src="https://sun3-17.userapi.com/impg/JFK1_RrM_UvWrlL_N9bE6beFpI9VxPIE4ZC5WA/dVReikDfSn4.jpg?size=483x604&quality=95&sign=5dd27a91feb1fa3cf38638e1b335f71f&c_uniq_tag=iLQSsUvv0JgV2Zao6Nc8xlzEAarq4elw94s8AxjXeXM&type=album"
+                  alt=""
+                />
+                <img
+                  src="https://sun3-19.userapi.com/impg/GeYC-sdai_S_qTkbNwkZ4VAf2yLM1QB7NdZRWA/1Ct2mPeNpHQ.jpg?size=604x501&quality=95&sign=109702e7eec7c3e49a09e109db930e09&c_uniq_tag=c4EZ0C4Ta5xryu8_uKGuFkYmAiBfoPb7fpRaNFrv8lo&type=album"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="post__icons">
+              <div class="post__icon">
+                <img src="/imgs/3.svg" alt="comment" />
+                <p>3</p>
+              </div>
+            </div>
+            <div class="post__comment-block" data-comments>
+              <div class="post__old-comment">
+                <div class="user__img-block">
+                  <div class="user__img"></div>
+                </div>
+                <div class="post__old-comment-content">
+                  <a href="#" class="user__name"> Weissman </a>
+                  <p class="post__text">Красивые птички</p>
+                  <p class="user__date">2 Марта в 15:30</p>
+                </div>
+                <div class="post__action-icons">
+                  <img src="imgs/bin.svg" alt="" class="delete" onclick="del(this)">
+                  <img src="imgs/unlike.svg" alt="" class="like" onclick="like(this)">
+                </div>
+              </div>
+              <div class="post__add-comment-container acc">
+                <div class="acc__left">
+                  <div class="user__img"></div>
+                </div>
+                <div class="acc__riht">
+                  <form action="#" name="newComment">
+                    <input type="text" name="userName" data-invalid placeholder="Введите ваше имя..." />
+                    <div class="acc__date">
+                      <div class="acc__date-choice">
+                        <label for="date"> Желателе установить дату? </label>
+                        <input type="checkbox" name="dateChoice" id="dateChoice" />
+                      </div>
+                      <input type="date" name="date" id="date" />
+                    </div>
+                    <div class="acc__submit">
+                      <textarea type="text" name="comment" placeholder="Напишите Коментарий..."></textarea>
+                      <button name="submit" type="button">
+                        <img src="imgs/paper-plane-svgrepo-com.svg" alt="" />
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>

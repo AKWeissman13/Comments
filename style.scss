@@ -1,0 +1,488 @@
+@function vw($px-vw, $base-vw: 1544px) {
+    @return ($px-vw * 100vw) / $base-vw;
+}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: vw(16px);
+}
+$header_bg: #222222;
+$body_bg: #141414;
+$header_text: #e1e3e6;
+$search_field_color: #424242;
+.header {
+    width: 100%;
+    height: vw(48px);
+    background-color: $header_bg;
+    box-sizing: border-box;
+    &__inner {
+        padding: 0px vw(15px);
+        width: vw(1076px);
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__left {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        height: 100%;
+    }
+    &__logo-img {
+        margin-right: vw(5px);
+    }
+    &__logo-title {
+        margin-right: vw(30px);
+    }
+
+    &__notification {
+        margin: 0px vw(20px);
+        padding: 0px vw(10px);
+    }
+    &__notification:hover,
+    &__profile:hover,
+    &__menu:hover {
+        background-color: #303030;
+    }
+    &__right {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        height: 100%;
+    }
+    &__menu {
+        width: vw(24px);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-right: vw(10px);
+        padding-left: vw(10px);
+        img {
+            width: vw(24px);
+            height: vw(24px);
+            filter: invert(50%) sepia(19%) saturate(13%) hue-rotate(64deg) brightness(93%) contrast(95%);
+        }
+    }
+    &__profile {
+        width: vw(32px);
+        padding-right: vw(26px);
+        padding-left: vw(15px);
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    &__profile::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: vw(12px);
+        background-image: url("../imgs/down-arrow-backup-2-svgrepo-com.svg");
+        filter: invert(50%) sepia(19%) saturate(13%) hue-rotate(64deg) brightness(93%) contrast(95%);
+        width: vw(12px);
+        height: vw(8px);
+        transform: translate(100%, -50%);
+        background-size: contain;
+        background-position: top left;
+
+        background-repeat: no-repeat;
+    }
+    user__img {
+        width: vw(32px);
+        height: vw(32px);
+        background-image: url("../imgs/Weissman.jpg");
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 100%;
+    }
+}
+.logo-img {
+    width: vw(24px);
+    height: vw(24px);
+    &__img {
+        width: vw(24px);
+        height: vw(24px);
+    }
+}
+.logo-title {
+    font-size: vw(15px);
+    text-transform: uppercase;
+    color: white;
+    font-weight: 800;
+}
+.search {
+    position: relative;
+    &__field {
+        width: vw(196px);
+        height: vw(32px);
+        padding-left: vw(34px);
+        outline: none;
+        border: none;
+        font-size: vw(16px);
+        border-radius: vw(8px);
+        background-color: $search_field_color;
+        color: $header_text;
+        //position: relative;
+    }
+}
+.search::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: vw(17px);
+    width: vw(16px);
+    height: vw(16px);
+    background-image: url("../imgs/search-svgrepo-com.svg");
+    background-size: contain;
+    background-position: top left;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+    filter: invert(50%) sepia(19%) saturate(13%) hue-rotate(64deg) brightness(93%) contrast(95%);
+}
+.notification {
+    width: vw(24px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    &__img {
+        width: vw(24px);
+        height: vw(24px);
+        filter: invert(50%) sepia(19%) saturate(13%) hue-rotate(64deg) brightness(93%) contrast(95%);
+    }
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #141414;
+    &__inner {
+        padding: vw(16px) 0px;
+        width: vw(1076px);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &__left {
+        flex: 0 0 15%;
+    }
+    &__nav {
+    }
+    &__nav-links {
+        text-decoration: none;
+        display: block;
+        height: vw(30px);
+        width: vw(122px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: vw(5px);
+        padding-left: vw(30px);
+        font-size: vw(13px);
+        color: $header_text;
+    }
+    &__nav-links:hover {
+        background-color: #303030;
+    }
+    &__nav-items {
+        list-style: none;
+        position: relative;
+    }
+
+    @for $i from 1 through 9 {
+        .main__nav-links:nth-child(#{$i}) &__nav-items::before {
+            content: "";
+            width: vw(20px);
+            height: vw(20px);
+            position: absolute;
+            top: 50%;
+            left: vw(-18px);
+            transform: translate(-50%, -50%);
+            $link: "/imgs/" + $i + ".svg";
+            background-image: url($link);
+            filter: invert(68%) sepia(100%) saturate(1545%) hue-rotate(183deg) brightness(94%) contrast(96%);
+            background-size: contain;
+            background-position: top left;
+
+            background-repeat: no-repeat;
+        }
+    }
+    &__center {
+        flex: 0 0 85%;
+    }
+    &__post {
+    }
+}
+.user {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    &__img-block {
+        margin-right: vw(12px);
+        display: flex;
+        align-items: center;
+    }
+    &__img {
+        width: vw(32px);
+        height: vw(32px);
+        background-image: url("../imgs/Weissman.jpg");
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 100%;
+    }
+    &__post-info {
+    }
+    &__name {
+        color: #71aaeb;
+        text-decoration: none;
+        font-size: vw(13px);
+    }
+    &__date {
+        color: #828282;
+        font-size: vw(13px);
+    }
+}
+.post {
+    width: vw(550px);
+    background-color: $header_bg;
+    border: vw(2px) solid #424242;
+    border-radius: vw(10px);
+    padding: vw(20px);
+
+    &__action-icons {
+        position: absolute;
+        top: vw(10px);
+        right: vw(10px);
+        display: flex;
+        flex-direction: column;
+        img {
+            width: vw(20px);
+            height: vw(20px);
+            margin-bottom: vw(10px);
+        }
+        .delete {
+            filter: invert(93%) sepia(6%) saturate(394%) hue-rotate(195deg) brightness(105%) contrast(81%);
+            transition: 0.2s;
+        }
+        .delete:hover {
+            filter: invert(19%) sepia(78%) saturate(2753%) hue-rotate(353deg) brightness(102%) contrast(91%);
+        }
+        .like {
+            filter: invert(19%) sepia(78%) saturate(2753%) hue-rotate(353deg) brightness(102%) contrast(91%);
+        }
+    }
+    &__content-text {
+        margin: vw(15px) 0;
+        font-size: vw(13px);
+        color: $header_text;
+    }
+    &__content-additive {
+        display: flex;
+        justify-content: space-between;
+
+        width: 100%;
+
+        img:nth-child(1) {
+            height: vw(254px);
+            // width: vw(254px);
+            border-radius: vw(10px) vw(2px) vw(2px) vw(10px);
+            flex: 0 1 48%;
+        }
+        img:nth-child(2) {
+            height: vw(254px);
+            // width: vw(254px);
+            border-radius: vw(2px) vw(10px) vw(10px) vw(2px);
+            flex: 0 1 48%;
+        }
+    }
+    &__icons {
+        display: flex;
+        justify-content: left;
+        margin: vw(10px) 0;
+    }
+    &__icon {
+        padding: vw(2px) vw(5px);
+        background-color: #333333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: content-box;
+        width: vw(20px);
+        height: vw(20px);
+        padding: vw(8px) vw(18px);
+        border-radius: vw(20px);
+        img {
+            width: vw(20px);
+            height: vw(20px);
+            filter: invert(79%) sepia(4%) saturate(15%) hue-rotate(93deg) brightness(91%) contrast(87%);
+        }
+        p {
+            display: none;
+            margin-left: vw(5px);
+            font-size: vw(13px);
+            color: $header_text;
+        }
+    }
+    &__icon:hover {
+        background-color: #373737;
+    }
+
+    &__comment-block {
+        margin: 0 vw(-20px);
+        border-top: vw(2px) solid #424242;
+        
+    }
+
+    &__old-comment {
+        display: flex;
+        justify-content: left;
+        align-items: top;
+        padding: vw(10px) vw(20px);
+        position: relative;
+        .user {
+            &__img-block {
+                display: flex;
+                align-items: unset;
+                padding-top: vw(5px);
+            }
+            &__name {
+                color: $header_text;
+                font-weight: 500;
+            }
+            &__date {
+            }
+            &__name:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__text {
+        color: $header_text;
+        font-size: vw(14px);
+        font-weight: 300;
+    }
+
+    &__add-comment-container {
+        display: flex;
+        align-items: flex-start;
+        border-top: vw(2px) solid #424242;
+        padding-top: 10px;
+    }
+
+    .acc {
+        &__left {
+            flex: 0 0 10%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        &__riht {
+            overflow: hidden;
+            input[type="text"] {
+                width: vw(196px);
+                height: vw(32px);
+                padding-left: vw(15px);
+                outline: none;
+                border: vw(2px) solid #424242;
+                font-size: vw(13px);
+                border-radius: vw(4px);
+                background-color: $header_bg;
+                color: $header_text;
+            }
+            flex: 0 0 90%;
+        }
+        &__date {
+            input[type="date"] {
+                display: none;
+                padding: vw(4px) vw(6px);
+                margin: vw(10px) vw(40px);
+                border: vw(2px) solid #424242;
+                font-size: vw(13px);
+                border-radius: vw(4px);
+                background-color: $header_bg;
+                outline: none;
+                color: $header_text;
+            }
+            input[data-invalid] {
+                border-color: red;
+            }
+        }
+        &__date-choice {
+            margin: vw(8px) 0 vw(8px) 0;
+            display: flex;
+            align-items: center;
+            color: $header_text;
+            font-size: vw(13px);
+            font-family: 300;
+            label {
+                margin-right: vw(20px);
+            }
+            input[type="checkbox"] {
+                margin-top: vw(4px);
+
+                width: vw(22px);
+                height: vw(22px);
+                border: vw(1px) solid #343a3f;
+                border-radius: vw(3.2px);
+                transition: all 0.2s, background 0.2s ease-in-out;
+                background: #f3f3f3;
+            }
+        }
+        &__submit {
+            display: flex;
+            align-items: top;
+            width: 100%;
+            textarea {
+                box-sizing: border-box;
+                margin-top: vw(4px);
+                padding-left: vw(15px);
+                padding-top: vw(5px);
+                padding-right: vw(15px);
+                flex: 0 0 85%;
+                height: vw(32px);
+                outline: none;
+                border: vw(2px) solid #424242;
+                font-size: vw(13px);
+                line-height: vw(16px);
+                border-radius: vw(4px);
+                background-color: $header_bg;
+                color: $header_text;
+                overflow: hidden;
+                resize: none;
+            }
+            button {
+                width: vw(21px);
+                height: vw(21px);
+                flex: 0 0 10%;
+                padding: 0;
+                margin: vw(8px) 0 0 0;
+                outline: none;
+                border: none;
+                background: none;
+                img {
+                    width: vw(20px);
+                    height: vw(20px);
+                    filter: invert(23%) sepia(3%) saturate(24%) hue-rotate(344deg) brightness(92%) contrast(88%);
+                }
+            }
+        }
+    }
+}
+#invalid {
+    border-color: red;
+    border-width: vw(4px);
+    transition: 0.2s ease-in-out;
+}
+#valid {
+    border: vw(2px) solid #424242;
+    transition: 0.2s ease-in-out;
+}
